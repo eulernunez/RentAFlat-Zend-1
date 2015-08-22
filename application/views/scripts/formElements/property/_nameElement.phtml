@@ -1,0 +1,15 @@
+<?php
+echo $this->formLabel($this->element->getName(), $this->element->getLabel());
+ 
+
+$formElement = $this->element->helper;
+echo $this->$formElement(
+	$this->element->getName(),
+	$this->element->getValue(),
+	$this->element->getAttribs()
+);
+ 
+echo '<a href="/help.html" target="_blank">Need help?</a>';
+ 
+$errors = $this->element->getMessages();
+if (!empty($errors)) echo $this->formErrors($this->element->getMessages());
