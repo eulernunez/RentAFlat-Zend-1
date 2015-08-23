@@ -175,14 +175,21 @@ class SandboxEulerController extends Zend_Controller_Action
         
         $diff = $final->diff($inicio);
         
-        
         echo "Diferencia: " . $diff->format('%m mes, %d dias (total: %a dias)') . "<br/>";
-        
-        
-   
-        
-        
        
+    }        
+    
+    
+    public function testGitAction()
+    {
+        $this->view->layout()->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+        
+        
+        
+        
+        
+        
     }        
     
     
