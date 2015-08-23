@@ -145,5 +145,47 @@ class SandboxEulerController extends Zend_Controller_Action
         
     }        
 
+
+    /**
+     * @author Euler Nunez <eulernunez@gmail.com>
+     * 
+     * 
+     */
+    
+    public function testDateAction()
+    {
+       
+        $this->view->layout()->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+        
+        echo 'Testeando <br/>';
+       
+        $fecha = '22-12-1968';
+        $inicio = \DateTime::createFromFormat('d-m-Y', $fecha);
+        $inicio->format('d/m/Y');
+        
+        //die('<pre>' . print_r($inicio->format('d/m/Y'),true) . '</pre>');
+        
+        echo "Fecha de Inicio: " . $inicio->format('d/m/Y') . "<br/>";
+
+        $final = clone $inicio;
+        $final->add(new \DateInterval('P1M6D'));
+
+        echo "Fecha de Finak: " . $final->format('d/m/Y') . "<br/>";
+        
+        $diff = $final->diff($inicio);
+        
+        
+        echo "Diferencia: " . $diff->format('%m mes, %d dias (total: %a dias)') . "<br/>";
+        
+        
+   
+        
+        
+       
+    }        
+    
+    
+    
 }
 

@@ -44,8 +44,10 @@
  */
 
 //ini_set("display_errors", E_ALL);
-error_reporting (0);
+//error_reporting (1); // 1 - Muestra los warning y errors  |  0 - No muestra
 
+error_reporting(E_ERROR | E_WARNING);
+//error_reporting(0);
 
 // Define path to application directory
 defined('APPLICATION_PATH')
