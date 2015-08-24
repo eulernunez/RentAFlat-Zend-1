@@ -185,6 +185,8 @@ class SandboxEulerController extends Zend_Controller_Action
         $this->view->layout()->disableLayout();
         $this->_helper->viewRenderer->setNoRender(true);
         
+        echo ('Testing <br/>');
+        
         
         
         
